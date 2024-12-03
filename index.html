@@ -119,5 +119,26 @@
 
     <script src="static/js/config.js"></script>
     <script src="static/js/main.js"></script>
+    <div id="chatbotOptions" class="mode-options" style="display: none;">
+    <p class="mode-description">Have an interactive conversation about any topic with your favorite character! Learn through engaging dialogue and personalized explanations.</p>
+    <div class="character-selection">
+        <h3>Select Character</h3>
+        <select id="character" class="character-dropdown">
+            <option value="naruto">Naruto</option>
+            <option value="lebron">LeBron James</option>
+            <option value="batman">Batman</option>
+        </select>
+    </div>
+</div>
+
+<div id="chatInterface" class="chat-interface" style="display: none;">
+    <img src="static/images/naruto-character.png" alt="Character" class="character-image">
+    <div id="chatMessages" class="chat-messages"></div>
+    <div class="chat-input-container">
+        <input type="text" id="chatInput" placeholder="Type your message...">
+        <button id="sendMessage">Send</button>
+    </div>
+</div>
+
 </body>
 </html>
