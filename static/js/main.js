@@ -376,3 +376,40 @@ document.addEventListener('DOMContentLoaded', () => {
     showModeOptions(initialMode);
     updateSavedList();
 });
+const characterDropdown = document.getElementById('character');
+const chatInterface = document.getElementById('chatInterface');
+const characterImage = document.querySelector('.character-image');
+
+// Map characters to their respective assets
+const characterAssets = {
+    naruto: {
+        background: 'static/images/naruto-background.jpg',
+        image: 'static/images/naruto-character.png'
+    },
+    lebron: {
+        background: 'static/images/lebron-background.jpg',
+        image: 'static/images/lebron-character.png'
+    },
+    batman: {
+        background: 'static/images/batman-background.jpg',
+        image: 'static/images/batman-character.png'
+    }
+};
+
+// Update background and character image when a new character is selected
+characterDropdown.addEventListener('change', () => {
+    const selectedCharacter = characterDropdown.value;
+    const assets = characterAssets[selectedCharacter];
+
+    if (assets) {
+        chatInterface.style.backgroundImage = `url('${assets.background}')`;
+        characterImage.src = assets.image;
+        characterImage.alt = selectedCharacter;
+    } else {
+        // Fallback
+        chatInterface.style.backgroundImage = 'none';
+        characterImage.src = '';
+        characterImage.alt = '';
+    }
+});
+
